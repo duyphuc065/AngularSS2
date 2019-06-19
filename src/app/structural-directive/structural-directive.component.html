@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Bài tập structural directive - CYBERSOFT</h1>
+  <table class="table">
+    <thead class="thead-dark">     
+        <th colspan=4>Quản lý danh mục sản phẩm</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" class="form-control" placeholder="MaSP" #maSP></td>
+        <td><input type="text" class="form-control" placeholder="TenSP" #tenSP></td>
+        <td><input type="text" class="form-control"placeholder="Gia" #gia></td>
+        <td><button class="btn btn-success" (click)="themSP(maSP.value,tenSP.value,gia.value)">Thêm sản phẩm</button></td>
+      </tr>     
+    </tbody>
+  </table>
+  <table class="table">
+    <thead class="thead-dark">
+      <th colspan="4">Danh mục sản phẩm</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Mã SP</th>
+        <th>Tên SP</th>
+        <th>Giá</th>
+        <td>Tùy chỉnh</td>
+      </tr>
+      <tr *ngFor="let item of mangSP ;let stt=index">
+        <td scope="row">{{item.MaSP}}</td>
+        <td>{{item.TenSP}}</td>
+        <td>{{item.Gia}}</td>
+        <td><button class="btn btn-danger" (click)="xoaSP(stt)">Xóa</button></td>
+      </tr>
+    </tbody>
+  </table>
+ 
+</div>
+
+ 
